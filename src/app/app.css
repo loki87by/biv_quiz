@@ -1,0 +1,82 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'montserrat', sans-serif;
+  font-size: 5vmin;
+  background-color: #fff;
+  color: #000;
+}
+
+div {
+  position: relative;
+  width: max-content;
+}
+
+h1, input {
+  margin-top: 0;
+  margin-bottom: 5vmin;
+  font-size: 5vmin;
+  text-align: center;
+  line-height: 1.25;
+}
+
+input {
+  border-width: 1px;
+  padding: 2px;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  font-size: 0;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #fff;
+  text-align: center;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+input:placeholder-shown + label {
+  font-size: 3vmin;
+  opacity: 1;
+  color: #f00;
+  -webkit-transform: translateY(-4vmin);
+  -ms-transform: translateY(-4vmin);
+  transform: translateY(-4vmin);
+  -webkit-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+h1 {
+  height: 6.25vmin;
+}
+
+button {
+  width: 50vmin;
+  height: 50vmin;
+  border-radius: 50%;
+  background-color: #f00;
+  color: #fff;
+  font-size: 5vmin;
+  cursor: pointer;
+}
+
+button[disabled] {
+  font-size: 25vmin;
+  background-color: rgb(138, 67, 67);
+}
+
+
