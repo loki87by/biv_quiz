@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/biv_quiz/static/css/main.9f61c9e7.chunk.css",
-    "main.js": "/biv_quiz/static/js/main.504d2912.chunk.js",
-    "main.js.map": "/biv_quiz/static/js/main.504d2912.chunk.js.map",
+    "main.js": "/biv_quiz/static/js/main.0f5619ae.chunk.js",
+    "main.js.map": "/biv_quiz/static/js/main.0f5619ae.chunk.js.map",
     "runtime-main.js": "/biv_quiz/static/js/runtime-main.b43770d1.js",
     "runtime-main.js.map": "/biv_quiz/static/js/runtime-main.b43770d1.js.map",
     "static/js/2.6933bfbc.chunk.js": "/biv_quiz/static/js/2.6933bfbc.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b43770d1.js",
     "static/js/2.6933bfbc.chunk.js",
     "static/css/main.9f61c9e7.chunk.css",
-    "static/js/main.504d2912.chunk.js"
+    "static/js/main.0f5619ae.chunk.js"
   ]
 }
