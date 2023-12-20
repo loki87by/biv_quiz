@@ -6,17 +6,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'montserrat', sans-serif;
+  font-family: "montserrat", sans-serif;
   font-size: 10vmin;
   background-color: #fff;
   color: #000;
 }
 
 #root {
-  position: fixed;
-  bottom: 0;
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

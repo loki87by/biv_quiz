@@ -1,11 +1,22 @@
 section {
   position: relative;
   width: 90vw;
-  height: 25vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-size: 15vmin;
+}
+
+h2 {
+  position: fixed;
+  top: calc(25vh - 15vmin);
 }
 
 div {
@@ -17,7 +28,7 @@ input {
   width: 90vw;
   margin: 0;
   border: 1px solid #c8bdbd;
-  border-radius: 3vmin;
+  border-radius: 6vmin;
   font-size: 10vmin;
   text-align: center;
   line-height: 1.5;
@@ -32,6 +43,7 @@ label {
   font-size: 0;
   font-weight: 900;
   line-height: 1.5;
+  font-weight: 600;
   color: #fff;
   text-align: center;
   -webkit-transform: translateY(0);
@@ -54,6 +66,11 @@ input:placeholder-shown + label {
   transition: all 0.4s ease-out;
 }
 
+input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+
 button {
   width: 50vmin;
   height: 50vmin;
@@ -66,15 +83,20 @@ button {
   cursor: pointer;
 }
 
-.green-button {
+.green-button,
+.blue-button {
   height: max-content;
   border-radius: 10vmin;
-  background-color: #62ff84;
 }
 
 button[disabled] {
-  font-size: 20vmin;
   background-color: #ffbdbd;
 }
 
+.green-button {
+  background-color: #62ff84 !important;
+}
 
+.blue-button {
+  background-color: #52d5ff;
+}
