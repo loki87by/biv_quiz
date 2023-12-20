@@ -1,14 +1,11 @@
-#root {
-  width: 100vw;
-  height: 100vh;
+section {
+  position: relative;
+  width: 90vw;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-family: 'montserrat', sans-serif;
-  font-size: 5vmin;
-  background-color: #fff;
-  color: #000;
+  justify-content: space-between;
 }
 
 div {
@@ -16,17 +13,14 @@ div {
   width: max-content;
 }
 
-h1, input {
-  margin-top: 0;
-  margin-bottom: 5vmin;
-  font-size: 5vmin;
-  text-align: center;
-  line-height: 1.25;
-}
-
 input {
-  border-width: 1px;
-  padding: 2px;
+  width: 90vw;
+  margin: 0;
+  border: 1px solid #c8bdbd;
+  border-radius: 3vmin;
+  font-size: 10vmin;
+  text-align: center;
+  line-height: 1.5;
 }
 
 label {
@@ -37,7 +31,7 @@ label {
   opacity: 0;
   font-size: 0;
   font-weight: 900;
-  line-height: 1.25;
+  line-height: 1.5;
   color: #fff;
   text-align: center;
   -webkit-transform: translateY(0);
@@ -49,34 +43,38 @@ label {
 }
 
 input:placeholder-shown + label {
-  font-size: 3vmin;
+  font-size: 7vmin;
   opacity: 1;
   color: #f00;
-  -webkit-transform: translateY(-4vmin);
-  -ms-transform: translateY(-4vmin);
-  transform: translateY(-4vmin);
+  -webkit-transform: translateY(-15vmin);
+  -ms-transform: translateY(-15vmin);
+  transform: translateY(-15vmin);
   -webkit-transition: all 0.4s ease-out;
   -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
 
-h1 {
-  height: 6.25vmin;
-}
-
 button {
   width: 50vmin;
   height: 50vmin;
+  border: none;
   border-radius: 50%;
-  background-color: #f00;
+  background-color: #ff5c5c;
   color: #fff;
-  font-size: 5vmin;
+  font-size: 10vmin;
+  line-height: 1.5;
   cursor: pointer;
 }
 
+.green-button {
+  height: max-content;
+  border-radius: 10vmin;
+  background-color: #62ff84;
+}
+
 button[disabled] {
-  font-size: 25vmin;
-  background-color: rgb(138, 67, 67);
+  font-size: 20vmin;
+  background-color: #ffbdbd;
 }
 
 
