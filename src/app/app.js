@@ -81,7 +81,7 @@ const App = () => {
       }
     }
 
-    const ws = new WebSocket("ws://158.160.127.178:8080");
+    const ws = new WebSocket("wss://158.160.127.178:8080");
 
     ws.onopen = () => {
       ws.send(JSON.stringify(data));
