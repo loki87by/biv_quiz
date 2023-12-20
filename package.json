@@ -13,8 +13,6 @@
     "react-router": "^5.3.4",
     "react-router-dom": "^6.19.0",
     "react-scripts": "4.0.1",
-    "react-touch-events": "^3.0.0",
-    "socket.io-client": "^4.7.2",
     "web-vitals": "^0.2.4",
     "websocket": "^1.0.34",
     "ws": "^8.15.1"
