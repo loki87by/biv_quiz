@@ -68,6 +68,10 @@ const politicalWords = [
     regex: /девопс/gi,
     answer: "деВОППЕР",
   },
+  {
+    regex: /л([её]ня|еонид)/gi,
+    answer: "Сеньор поддержки",
+  },
 ];
 
 const goodWords = [
