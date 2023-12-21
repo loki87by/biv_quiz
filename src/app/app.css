@@ -12,11 +12,12 @@ h1,
 h2 {
   margin: 0;
   font-size: 15vmin;
+  text-align: center;
 }
 
 h2 {
   position: fixed;
-  top: calc(25vh - 15vmin);
+  top: calc(25vh - 20vmin);
 }
 
 div {
