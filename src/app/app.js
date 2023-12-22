@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { censoredChecker } from "../utils/helpers";
 import "./app.css";
 
 const App = () => {
   const [username, setUsername] = useState("");
   const [currentUser, setCurrentUser] = useState("");
-  const [timerCounter, setTimerCounter] = useState(30);
+  const [timerCounter, setTimerCounter] = useState(15);
   const [admin, setAdmin] = useState(false);
   const [isAuthorized, setAuthorized] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -31,6 +31,12 @@ const App = () => {
     }
     setUsername(name.match(regex).join(""));
   }
+
+  const currentTimerStarter = useCallback((time) => {
+    setTimeout(() => {
+      setTimerStarted(true);
+    }, time);
+  }, []);
 
   useEffect(() => {
     if (timerStarted && timerCounter > 0) {
@@ -62,7 +68,7 @@ const App = () => {
             type: "reset",
           };
           setTimerStarted(false);
-          setTimerCounter(30);
+          setTimerCounter(15);
           setCurrentUser("");
         } else {
           setGlobalDisabled(!globalDisabled);
@@ -71,22 +77,41 @@ const App = () => {
             username: username,
           };
           setTimerStarted(false);
-          setTimerCounter(30);
+          setTimerCounter(15);
         }
       } else {
         data = {
           type: "disabled",
           username: username,
+          timestamp: Date.now(),
         };
       }
     }
 
-    const ws = new WebSocket("ws://158.160.127.178:8080");
+    const ws = new WebSocket("ws://158.160.127.178/:8080");
 
     ws.onopen = () => {
       ws.send(JSON.stringify(data));
       ws.onmessage = (event) => {
         if (JSON.parse(event.data).type === "success") {
+          if (JSON.parse(event.data).timestamp) {
+            const now = Date.now();
+            const diff = now - JSON.parse(event.data).timestamp;
+            const secs = Math.ceil(diff / 1000);
+            const mss = Math.round(
+              (diff / 1000 - Math.floor(diff / 1000)) * 1000
+            );
+
+            if (secs < 15) {
+              setTimerCounter(15 - secs);
+              currentTimerStarter(1000 - mss);
+              setButtonDisabled(true);
+            }
+          }
+
+          if (JSON.parse(event.data).currentUser !== "") {
+            setCurrentUser(JSON.parse(event.data).currentUser);
+          }
           if (username === "админ") {
             setAdmin(true);
           }
@@ -94,7 +119,7 @@ const App = () => {
         }
 
         if (JSON.parse(event.data).type === "reset") {
-          setTimerCounter(30);
+          setTimerCounter(15);
           setTimerStarted(false);
           setButtonDisabled(true);
           setGlobalDisabled(true);

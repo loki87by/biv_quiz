@@ -13,13 +13,14 @@
     "react-router": "^5.3.4",
     "react-router-dom": "^6.19.0",
     "react-scripts": "4.0.1",
+    "rimraf": "^5.0.5",
     "web-vitals": "^0.2.4",
     "websocket": "^1.0.34",
     "ws": "^8.15.1"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "build": "rimraf build && react-scripts --openssl-legacy-provider build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
